@@ -52,7 +52,6 @@ if streamlit.button('Get Fruit Load List'):
    streamlit.dataframe(my_data_rows)
    
 streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_rows)
 
 streamlit.stop()
 
