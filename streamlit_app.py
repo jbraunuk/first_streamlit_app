@@ -17,7 +17,7 @@ my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.co
 my_fruit_list = my_fruit_list.set_index('Fruit') 
 
 # create a pick list
-fruits_selected = streamlit.multiselect("Pick some fruita:", list(my_fruit_list.index), ['Avocado', 'Strawberries'])
+fruits_selected = streamlit.multiselect("Pick some fruit:", list(my_fruit_list.index), ['Avocado', 'Strawberries'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 #display the dataframe
@@ -43,3 +43,7 @@ my_cur.execute("SELECT * FROM fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
+
+fruit_choice2 = streamlit.text_input('what fruit would you like to add?', 'jackfruit')
+streamlit.write('Thanks for adding ' , fruit_choice2)
+
